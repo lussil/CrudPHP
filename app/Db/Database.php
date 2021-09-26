@@ -69,5 +69,19 @@ try {
         return $this->connection->lastInsertId();
        
     }
+    // metodo responsavel por executar consulta ao banco
+    public function select($where = null, $order = null, $limit = null , $fields = '*'){
+        // dados da query
+        $where = strlen($where) ? 'WHERE'. $where: '';
+        $order = strlen($order) ? 'ORDER BY'. $order: '';
+        $limit = strlen($limit) ? 'LIMIT'. $limit: '';
+
+        // monta a query
+        $query = 'SELECT '.$fields.' FROM '.$this->table .' '. $where.' '.$order.' '.$limit;
+        return $this->execute($query);
+    }
+
+
+
 
 }

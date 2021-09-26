@@ -39,12 +39,23 @@ class Vaga{
 
         ]);
 
-        echo "<pre>" ; 
-        print_r($this); 
-        echo "</pre>"; 
+      
         //Atribuir o id da vaga na instacia
 
         // retornar sucesso
         return true;
     }
+
+    // metodo responsavel por obter as vagas do banco
+    public static function getVagas($where = null, $order = null, $limit = null){
+        return (new Database('vagas'))->select($where, $order, $limit)
+                                      ->fetchAll(PDO::FETCH_CLASS, self::class);
+    } 
+
+
+
+
+
+
+
 }
