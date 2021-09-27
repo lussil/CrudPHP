@@ -11,7 +11,7 @@
 
         <div class="form-group">
             <label for="">Titulo</label>
-            <input type="text" class="form-control" name="titulo" value="<?=$obVaga->titulo ?>" >
+            <input type="text" class="form-control" name="titulo" value="<?=$obVaga->titulo ?>">
         </div>
 
         <div class="form-group">
@@ -32,7 +32,8 @@
 
                 <div class="form-check form-check-inline">
                     <label class="form-control" for="">
-                        <input type="radio" name="ativo" value="n" <?=$obVaga->ativo === 'n' ? 'checked' : ''  ?>>Inativo
+                        <input type="radio" name="ativo" value="n"
+                            <?=$obVaga->ativo === 'n' ? 'checked' : ''  ?>>Inativo
                     </label>
                 </div>
 

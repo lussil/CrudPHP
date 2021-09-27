@@ -54,6 +54,14 @@ class Vaga{
                                                                 ]);
     }
 
+
+    // metodo responsavel por excluir vaga
+    public function excluir(){
+        return (new Database('vagas'))->delete('id = '.$this->id);
+
+    }
+
+
     // metodo responsavel por obter as vagas do banco
     public static function getVagas($where = null, $order = null, $limit = null){
         return (new Database('vagas'))->select($where, $order, $limit)
