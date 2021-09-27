@@ -38,12 +38,20 @@ class Vaga{
             'data'      => $this->data
 
         ]);
-
-      
         //Atribuir o id da vaga na instacia
 
         // retornar sucesso
         return true;
+    }
+
+    // metodo responsavel por atualizar a vaga no banco
+    public function atualizar(){
+        return (new Database('vagas'))->update('id = '.$this->id,[
+                                                                    'titulo'    => $this->titulo,
+                                                                    'descricao' => $this->descricao,
+                                                                    'ativo'     => $this->ativo,
+                                                                    'data'      => $this->data
+                                                                ]);
     }
 
     // metodo responsavel por obter as vagas do banco
@@ -53,7 +61,11 @@ class Vaga{
     } 
 
 
-
+    // metodo responsavel por buscar a vaga com base no ID
+    public static function getVaga($id){
+        return (new Database('vagas'))->select('id = '. $id)
+                                    ->fetchObject(self::class);
+    }
 
 
 

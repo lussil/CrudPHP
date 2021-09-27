@@ -6,9 +6,9 @@ $vagas = Vaga::getVagas();
 
 
 
-echo "<pre>" ; 
-print_r($vagas); 
-echo "</pre>"; 
+// echo "<pre>" ; 
+// print_r($vagas); 
+// echo "</pre>"; 
 
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/listagem.php';

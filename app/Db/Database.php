@@ -70,18 +70,29 @@ try {
        
     }
     // metodo responsavel por executar consulta ao banco
-    public function select($where = null, $order = null, $limit = null , $fields = '*'){
-        // dados da query
-        $where = strlen($where) ? 'WHERE'. $where: '';
-        $order = strlen($order) ? 'ORDER BY'. $order: '';
-        $limit = strlen($limit) ? 'LIMIT'. $limit: '';
-
-        // monta a query
-        $query = 'SELECT '.$fields.' FROM '.$this->table .' '. $where.' '.$order.' '.$limit;
+    public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        //dados da query
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+    
+        //monta a query
+        $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+    
+        // executa a query
         return $this->execute($query);
-    }
+      }
+
+      // metodo responsavel por executar a atualizaçã da vaga no banco
+      public function update($where,$values){
+        // dados da query
+        $fields = array_keys($values);
 
 
 
+        $query = 'UPDATE '. $this->table.' SET ' .implode('=?,',$fields).'=? WHERE ' .$where;
+        return $this->execute($query,array_values($values));
+
+      }
 
 }

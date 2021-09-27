@@ -9,7 +9,16 @@ foreach($vagas as $vaga){
     <td>'.($vaga->ativo == 's' ? 'Ativo' : 'Inativo').'</td>
     <td>'.date('d/m/Y à\s H:i:s',strtotime($vaga->data)).'</td>
     <td>
-     
+  
+
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <a href="editar.php?id='.$vaga->id.'"> <button type="button" class="btn btn-warning">Editar</button> </a>
+    <a href="excluir.php?id='.$vaga->id.'"> <button type="button" class="btn btn-primary">ver</button>     </a>
+    <a href="ver.php?id='.$vaga->id.'"> <button type="button" class="btn btn-danger">Excluir</button>    </a>
+    </div>
+
+    
+
     </td>
   </tr>';
 }
@@ -26,7 +35,7 @@ foreach($vagas as $vaga){
 
     </section>
     <section>
-        <table class="table bg-light mt-3 ">
+        <table class="table table-dark bg-light mt-3 ">
             <thead>
 
                 <tr>

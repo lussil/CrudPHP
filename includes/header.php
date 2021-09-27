@@ -13,7 +13,7 @@
     <title>Wdev vagas</title>
 </head>
 
-<body class="bg-dark text-light">
+<body class="bg-light text-dark">
 
 <div class="container">
 
