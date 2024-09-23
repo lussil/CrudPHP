@@ -4,13 +4,12 @@ namespace App\Db;
 use \PDO;
 use \PDOException;
 
-
 class Database{
     //host de conexão com banco de dados
     const HOST = 'localhost';
 
     //nome do banco de dado
-    const NAME = 'wp_vagas';
+    const NAME = 'localhost';
 
     //usuario do banco
     const USER = 'root';

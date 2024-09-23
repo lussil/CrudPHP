@@ -6,14 +6,12 @@ define('TITLE' , 'Cadastrar vaga');
 use \App\Entity\Vaga;
 $obVaga = new Vaga;
 
-
 // validação
 if (isset($_POST['titulo'], $_POST['descricao'] , $_POST['ativo'])) {
 
-
    $obVaga->titulo    = $_POST['titulo'];
    $obVaga->descricao = $_POST['descricao'];
-   $obVaga->ativo     = $_POST['ativo'];
+   $obVaga->ativo     = $_POST['ativo'] == 's' ? true : false;
    $obVaga->cadastrar();
 
    header('location:index.php?status=success');

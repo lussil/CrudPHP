@@ -33,7 +33,7 @@
                 <div class="form-check form-check-inline">
                     <label class="form-control" for="">
                         <input type="radio" name="ativo" value="n"
-                            <?=$obVaga->ativo === 'n' ? 'checked' : ''  ?>>Inativo
+                            <?=$obVaga->ativo === 1 ? 'checked' : ''  ?>>Inativo
                     </label>
                 </div>
 
